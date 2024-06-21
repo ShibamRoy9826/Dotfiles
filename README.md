@@ -3,6 +3,7 @@
 ![Screenshot](https://github.com/ShibamRoy9826/Dotfiles/blob/main/screenshots/Img1.png)
 ![Screenshot2](https://github.com/ShibamRoy9826/Dotfiles/blob/main/screenshots/Img2.jpg)
 ![Screenshot3](https://github.com/ShibamRoy9826/Dotfiles/blob/main/screenshots/Img-3.jpg)
+
 ## Dependencies
 These are some dependencies you may want to have if you want exact setup as mine:
 
@@ -31,6 +32,7 @@ These are some dependencies you may want to have if you want exact setup as mine
 4. sl
 5. lolcat( the gradient color)
 6. figlet
+7. Neovim (with NvChad)
 
 ## Kitty Theme:
 - [Catpuccin-Mocha theme](https://github.com/catppuccin/kitty)
@@ -86,8 +88,8 @@ That's it for the polybar:)
 
 ### i3 setup
 That's pretty much simple!
-You need to install some applications including [kitty](https://sw.kovidgoyal.net/kitty/), [thunar](https://wiki.archlinux.org/title/Thunar),[scrot](https://github.com/resurrecting-open-source-projects/scrot),[i3-gaps](https://github.com/yurimaster2112/i3-gaps)feh](https://github.com/derf/feh), [autotiling](https://github.com/nwg-piotr/autotiling)
- , [xcolor](https://archlinux.org/packages/extra/x86_64/xcolor/), And Picom.
+You need to install some applications including [kitty](https://sw.kovidgoyal.net/kitty/), [thunar](https://wiki.archlinux.org/title/Thunar),[scrot](https://github.com/resurrecting-open-source-projects/scrot),[i3-gaps](https://github.com/yurimaster2112/i3-gaps),[feh](https://github.com/derf/feh), [autotiling](https://github.com/nwg-piotr/autotiling)
+ , [xcolor](https://archlinux.org/packages/extra/x86_64/xcolor/), And [Picom](https://github.com/lcdse7en/jonaburg-picom).
 if you dont want these applications, you may need to comment out a few lines in the i3, config, it should still work even if you dont comment out these lines i guess.
 
 Just run the following commands(make sure to backup your current config if you have any)
@@ -101,13 +103,19 @@ nvim ~/.config/picom.conf
 and that's it! just press Mod+Shift+C to reload your config:)
 
 ## Picom Setup
-The easiest part!
-just run this command(make sure to backup your config):
+Ofcourse you need to have picom installed first, there are several forks, but you can try [this](https://github.com/lcdse7en/jonaburg-picom) one out.Just run this command(make sure to backup your config):
 ```bash
 mv ~/Dotfiles/picom/picom.conf ~/.config/picom.conf
 ```
 and Done! as simple as that!
 
-## Thank you for reading please star this repo if you like it:)
+## Neofetch
+You need to have neofetch installed first, and then just run this:(Make sure to backup your config)
+```bash
+mv ~/Dotfiles/neofetch/config.conf ~/.config/neofetch/config.conf
+```
+That's all!
+
+## Thank you for reading! Please star this repo if you like it:)
 If you think there's any problem with the config, please open up an issue.
 
