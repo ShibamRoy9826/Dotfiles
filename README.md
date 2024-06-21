@@ -22,11 +22,15 @@ These are some dependencies you may want to have if you want exact setup as mine
 15. xcolor (For color picking)
 16. xclip & scrot (For screenshots and clipboard)
 17. autotiling (Optional, if you dont want it, remove last line from i3 config)
+18. i3-gaps
 
 ## Other Applications used in the screenshot
 1. pipes.sh
 2. unimatrix
 3. cava
+4. sl
+5. lolcat( the gradient color)
+6. figlet
 
 ## Kitty Theme:
 - [Catpuccin-Mocha theme](https://github.com/catppuccin/kitty)
@@ -62,20 +66,48 @@ This will copy all my config to your polybar config directory.
 ~/.config/polybar/mytheme/launch.sh
 ```
 5. Now you need to change a few things in the configuration.
-Run the following command:
+- Run the following command:
 ```bash
 ls sys/class/power_supply
 ```
-Notice your acpi names, it should be like BAT0, and ADP0 or something like that.
-Now open up the config:(you can use some other editor instead of neovim)
+- Notice your acpi names, it should be like BAT0, and ADP0 or something like that.
+- Now open up the config(you can use some other editor instead of neovim):
 ```bash
 nvim ~/.config/polybar/mytheme/config.ini
 ```
-Scroll down to the battery module, and change the Adapter and Battery variable:(replace the names)
+- Scroll down to the battery module, and change the Adapter and Battery variable:(replace the names)
 ```
 battery=BAT0
 adapter=ADP1
 ```
+- You also need to change the network module
+
 That's it for the polybar:)
 
+### i3 setup
+That's pretty much simple!
+You need to install some applications including [kitty](https://sw.kovidgoyal.net/kitty/), [thunar](https://wiki.archlinux.org/title/Thunar),[scrot](https://github.com/resurrecting-open-source-projects/scrot),[i3-gaps](https://github.com/yurimaster2112/i3-gaps)feh](https://github.com/derf/feh), [autotiling](https://github.com/nwg-piotr/autotiling)
+ , [xcolor](https://archlinux.org/packages/extra/x86_64/xcolor/), And Picom.
+if you dont want these applications, you may need to comment out a few lines in the i3, config, it should still work even if you dont comment out these lines i guess.
+
+Just run the following commands(make sure to backup your current config if you have any)
+```bash
+mv ~/Dotfiles/i3/config ~/.config/i3/config
+```
+You may also want to set a wallpaper, its almost at the end of the file, you can edit the image path there.
+```bash
+nvim ~/.config/picom.conf
+```
+and that's it! just press Mod+Shift+C to reload your config:)
+
+## Picom Setup
+The easiest part!
+just run this command(make sure to backup your config):
+```bash
+mv ~/Dotfiles/picom/picom.conf ~/.config/picom.conf
+```
+and Done! as simple as that!
+
+## Thank you for reading please star this repo if you like it:)
+If you think there's any problem with the config, please open up an issue.
 
