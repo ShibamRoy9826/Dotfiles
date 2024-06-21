@@ -44,6 +44,38 @@ These are some dependencies you may want to have if you want exact setup as mine
 3. [Kitsunebishi-Wallpapers](https://github.com/kitsunebishi/Wallpapers)
 
 ## Instructions
-To be added...
+### Setting up polybar
+1. First of all , You will need to have polybar installed ofcourse, which you can download from [here](https://github.com/polybar/polybar).
+You will also need to have rofi installed. Here's the [download link](https://github.com/davatorium/rofi). Make sure to install the other dependencies mentioned above too, so that all the modules work.
+2. Now you need to clone this repo:
+```bash
+git clone https://github.com/ShibamRoy9826/Dotfiles.git
+```
+3. Once you're done, run these commands on your terminal:
+```bash
+mv Dotfiles/polybar ~/.config/polybar/mytheme
+```
+This will copy all my config to your polybar config directory.
+
+4. Now you can simply launch polybar, using this:
+```bash
+~/.config/polybar/mytheme/launch.sh
+```
+5. Now you need to change a few things in the configuration.
+Run the following command:
+```bash
+ls sys/class/power_supply
+```
+Notice your acpi names, it should be like BAT0, and ADP0 or something like that.
+Now open up the config:(you can use some other editor instead of neovim)
+```bash
+nvim ~/.config/polybar/mytheme/config.ini
+```
+Scroll down to the battery module, and change the Adapter and Battery variable:(replace the names)
+```
+battery=BAT0
+adapter=ADP1
+```
+That's it for the polybar:)
 
 
