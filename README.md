@@ -13,7 +13,7 @@ These are some dependencies you may want to have if you want exact setup as mine
 4. kitty (For neofetch image support, A few others may also work)
 5. rofi
 6. polybar
-7. picom (I am using Jonaburg's fork)
+7. picom (I am using picom-simpleanims-next fork)
 8. neofetch
 9. i3 (I am using i3 as my wm)
 10. betterlockscreen (You can use i3lock if you want, but make sure to tweak the powermenu.sh in that case)
@@ -89,7 +89,7 @@ That's it for the polybar:)
 ### i3 setup
 That's pretty much simple!
 You need to install some applications including [kitty](https://sw.kovidgoyal.net/kitty/), [thunar](https://wiki.archlinux.org/title/Thunar),[scrot](https://github.com/resurrecting-open-source-projects/scrot),[i3-gaps](https://github.com/yurimaster2112/i3-gaps),[feh](https://github.com/derf/feh), [autotiling](https://github.com/nwg-piotr/autotiling)
- , [xcolor](https://archlinux.org/packages/extra/x86_64/xcolor/), And [Picom](https://github.com/lcdse7en/jonaburg-picom).
+ , [xcolor](https://archlinux.org/packages/extra/x86_64/xcolor/), And [Picom](https://aur.archlinux.org/picom-simpleanims-next-git.git).
 if you dont want these applications, you may need to comment out a few lines in the i3, config, it should still work even if you dont comment out these lines i guess.
 
 Just run the following commands(make sure to backup your current config if you have any)
@@ -103,7 +103,7 @@ nvim ~/.config/picom.conf
 and that's it! just press Mod+Shift+C to reload your config:)
 
 ## Picom Setup
-Ofcourse you need to have picom installed first, there are several forks, but you can try [this](https://github.com/lcdse7en/jonaburg-picom) one out.Just run this command(make sure to backup your config):
+Ofcourse you need to have picom installed first, there are several forks, but you can try [this](https://aur.archlinux.org/picom-simpleanims-next-git.git) one out.Just run this command(make sure to backup your config):
 ```bash
 mv ~/Dotfiles/picom/picom.conf ~/.config/picom.conf
 ```
