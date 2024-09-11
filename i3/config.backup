@@ -37,18 +37,11 @@ tiling_drag modifier titlebar
 
 
 # start a terminal
-# bindsym $mod+Return exec kitty
-bindsym $mod+Return exec kitty &
+bindsym $mod+Return exec st
 
 # Thunar file manager shortcut
-bindsym $mod+shift+f exec thunar &
+bindsym $mod+shift+f exec thunar
 
-# For Browser
-# bindsym $mod+Shift+b exec firefox-nightly &
-bindsym $mod+Shift+b exec zen-browser &
-
-#For Notes
-bindsym $mod+Shift+n exec xournalpp &
 # kill focused window
 bindsym $mod+q kill
 
@@ -60,8 +53,7 @@ bindsym $mod+d exec --no-startup-id rofi -show drun -theme $HOME/.config/rofi/La
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Shift+s exec --no-startup-id $HOME/.config/rofi/powermenu.sh  &
-# bindsym $mod+Shift+d exec --no-startup-id wired -d latest&
-bindsym $mod+Shift+d exec --no-startup-id dunstctl close &
+bindsym $mod+Shift+d exec --no-startup-id wired -d latest&
 
 # Click screenshots
 # scrot & gimp - root
@@ -88,14 +80,6 @@ bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
-
-# Scratchpad
-bindsym $mod+s scratchpad show
-bindsym $mod+Shift+minus move scratchpad
-
-# MPD controls
-bindsym $mod+Shift+p exec mpc -p 6200 toggle
-bindsym $mod+Shift+o exec mpc -p 6200 stop
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
@@ -112,7 +96,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+a layout stacking
+bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -123,7 +107,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-#bindsym $mod+a focus parent
+bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -205,23 +189,23 @@ bindsym $mod+r mode "resize"
 # Window gaps
 gaps inner 10
 gaps outer 10
-gaps top 40
+gaps top 35
 
 # Border
-default_border pixel 0
-default_floating_border pixel 0
-for_window [class="^.*"] border pixel 0
+default_border pixel 3
+default_floating_border pixel 3
+for_window [class="^.*"] border pixel 3
 
 # setting catppuccin colors ********************************************
 # target                 title     bg          text      indicator  border
-client.focused         #6c7086   #1e1e2e    #cdd6f4   #f5e0dc    #6c7086
+client.focused           #b4befe   #1e1e2e    #cdd6f4   #f5e0dc    #b4befe
 client.focused_inactive  #6c7086   #1e1e2e    #cdd6f4   #f5e0dc    #6c7086
 client.unfocused         #6c7086   #1e1e2e    #cdd6f4   #f5e0dc    #6c7086
 client.urgent            #fab387   #1e1e2e    #fab387   #6c7086   #fab387
 client.placeholder       #6c7086   #1e1e2e    #cdd6f4   #6c7086   #6c7086
 client.background        #1e1e2e
 
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 3
 
 
 
@@ -243,27 +227,20 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 #Starting notification daemon
-# exec --no-startup-id wired &
-exec --no-startup-id dunst &
+exec --no-startup-id wired &
 
 #Setting Wallpaper
-exec --no-startup-id python $HOME/easyfeh/easyfeh.py &
+exec --no-startup-id nitrogen --restore &
 
 #Starting Picom
 
 exec --no-startup-id picom -b &
 
 # Starting polybar
-exec --no-startup-id $HOME/.config/polybar/rice/launch.sh &
+exec --no-startup-id $HOME/.config/polybar/mytheme/launch.sh &
 
 #Starting music daemon
 exec --no-startup-id mpd
-
-#Starting Kanata
-exec --no-startup-id sudo kanata -c $HOME/.config/kanata/config.kbd &
-
-# Starting Nightlight
-exec --no-startup-id $HOME/Addons/CustomScripts/nightLight.sh
 
 # Autotiling
 exec --no-startup-id autotiling &

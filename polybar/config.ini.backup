@@ -12,8 +12,7 @@
 ;==========================================================
 
 [colors]
-; background = #1E1E2E
-background = #11111b
+background = #1E1E2E
 background-alt = #1E1E2E
 foreground = #C5C8C6
 primary = #F0C674
@@ -48,16 +47,16 @@ font-1 = "Symbols Nerd Font Mono:size=14"
 line-size = 4pt
 
 border-size = 3pt
-; border-color = #0000000
+border-color = #0000000
 
 padding-left = 10px
 padding-right = 10px
 
 module-margin = 10px
 
-modules-left = arch sep date sep nvim browser note music 
+modules-left = arch space date space nvim browser note space
 modules-center = xworkspaces
-modules-right = pulseaudio backlight sep battery sep internet 
+modules-right = space space space pulseaudio backlight separator battery separator internet space
 
 [module/xworkspaces]
 type = internal/xworkspaces
@@ -109,7 +108,7 @@ type = internal/backlight
 card = intel_backlight
 use-actual-brightness = true
 enable-scroll = true
-scroll-interval = 5
+scroll-interval = 1
 format = <ramp> <label>
 format-foreground = ${colors.white}
 label = %percentage%%
@@ -219,48 +218,39 @@ format = <label>
 
 [module/nvim]
 type = custom/text
-format = <label>
-label = 󰗀
-label-foreground = ${colors.blue}
-label-margin = 1
+content = 󰗀
+content-foreground = ${colors.blue}
+content-margin = 0
 click-left = kitty nvim & 
 
 [module/browser]
 type = custom/text
-format = <label>
-label = 󰈹
-label-foreground = ${colors.blue}
-label-margin = 1
+content = 󰈹
+content-foreground = ${colors.blue}
+content-margin = 0
 click-left = firefox-nightly &
 
 [module/note]
 type = custom/text
-format = <label>
-label = 󱓧
-label-foreground = ${colors.blue}
-label-margin = 1
+content = 󱓧
+content-foreground = ${colors.blue}
+content-margin = 0
 click-left = xournalpp &
 
-[module/music]
-type = custom/text
-format = <label>
-label = 󰝚  
-label-foreground = ${colors.blue}
-label-margin = 1
-click-left = kitty ncmpcpp -p 6200 &
 [module/arch]
 type = custom/text
-format = <label>
-label= 󰣇 
-label-foreground = ${colors.blue}
-label-margin = 3
+content = 󰣇
+content-foreground = ${colors.blue}
+content-margin = 5
 click-left = rofi -show drun -theme ~/.config/rofi/Launcher.rasi & 
-
-[module/sep]
+[module/space]
 type = custom/text
-format = <label>
-label = "|"
-label-foreground = ${colors.disabled}
+content = " "
+
+[module/separator]
+type = custom/text
+content = "|"
+content-foreground = ${colors.disabled}
 
 [module/cava]
 type = custom/script

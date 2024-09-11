@@ -1,4 +1,4 @@
-set $mod Mod4
+oet $mod Mod4i
 
 font pango:monospace 8
 
@@ -38,17 +38,13 @@ tiling_drag modifier titlebar
 
 # start a terminal
 # bindsym $mod+Return exec kitty
-bindsym $mod+Return exec kitty &
+bindsym $mod+Return exec kitty
 
 # Thunar file manager shortcut
-bindsym $mod+shift+f exec thunar &
+bindsym $mod+shift+f exec thunar
 
-# For Browser
-# bindsym $mod+Shift+b exec firefox-nightly &
-bindsym $mod+Shift+b exec zen-browser &
-
-#For Notes
-bindsym $mod+Shift+n exec xournalpp &
+#Open browser
+bindsym $mod+b exec firefox-nightly
 # kill focused window
 bindsym $mod+q kill
 
@@ -60,8 +56,7 @@ bindsym $mod+d exec --no-startup-id rofi -show drun -theme $HOME/.config/rofi/La
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Shift+s exec --no-startup-id $HOME/.config/rofi/powermenu.sh  &
-# bindsym $mod+Shift+d exec --no-startup-id wired -d latest&
-bindsym $mod+Shift+d exec --no-startup-id dunstctl close &
+bindsym $mod+Shift+d exec --no-startup-id wired -d latest&
 
 # Click screenshots
 # scrot & gimp - root
@@ -205,7 +200,7 @@ bindsym $mod+r mode "resize"
 # Window gaps
 gaps inner 10
 gaps outer 10
-gaps top 40
+gaps top 35
 
 # Border
 default_border pixel 0
@@ -243,11 +238,12 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 #Starting notification daemon
-# exec --no-startup-id wired &
-exec --no-startup-id dunst &
+exec --no-startup-id wired &
 
 #Setting Wallpaper
-exec --no-startup-id python $HOME/easyfeh/easyfeh.py &
+#exec --no-startup-id nitrogen --restore &
+
+exec --no-startup-id feh --bg-fill $HOME/Pictures/Wallpapers/astronaut_jellyfish.jpg &
 
 #Starting Picom
 
@@ -261,9 +257,6 @@ exec --no-startup-id mpd
 
 #Starting Kanata
 exec --no-startup-id sudo kanata -c $HOME/.config/kanata/config.kbd &
-
-# Starting Nightlight
-exec --no-startup-id $HOME/Addons/CustomScripts/nightLight.sh
 
 # Autotiling
 exec --no-startup-id autotiling &
